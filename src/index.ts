@@ -6,7 +6,7 @@ const URL = require('url').URL;
 
 const app = express();
 
-const port = Number(process.env.PORT || 8080);
+const port = Number(process.env.PORT || 1931);
 const SERVER_URL = process.env.SERVER_URL;
 
 const sendResponse = (res: Response, output: APIOutput | null) => {
