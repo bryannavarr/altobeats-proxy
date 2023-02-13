@@ -29,7 +29,7 @@ app.listen(port, () => {
 
 app.use(express.static('public'));
 
-app.get('/', async (req, res) => {
+app.get('/proxy', async (req, res) => {
   const url = req.query.url as unknown as string;
   const metadata = await getMetadata(url);
   return res
@@ -38,7 +38,7 @@ app.get('/', async (req, res) => {
     .json({ metadata });
 });
 
-app.get('/v2', async (req, res) => {
+app.get('/proxy/v2', async (req, res) => {
   try {
     let url = req.query.url as unknown as string;
     console.log({ url });
